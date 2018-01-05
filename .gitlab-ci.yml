@@ -7,4 +7,3 @@ unittest:
         - bash test.sh
     tags:
         - demo-runner
-        
