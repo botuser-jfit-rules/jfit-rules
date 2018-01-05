@@ -1,0 +1,10 @@
+stages:
+  - test
+
+unittest:
+    stage: test
+    script:
+        - bash test.sh
+    tags:
+        - demo-runner
+        
