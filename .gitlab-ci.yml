@@ -2,15 +2,15 @@ stages:
   - test
   - post_status
 
-cache:
-    untracked: true
-
 unittest:
     stage: test
     script:
         - python test.py
     tags:
         - demo-runner
+    cache:
+        paths:
+            - status.out
 
 status:
     stage: post_status
@@ -20,4 +20,6 @@ status:
         - demo-runner
     when: always
     cache:
+        path:
+            - status.out
         policy: pull
