@@ -8,7 +8,7 @@ g = github.Github("ayushgithub", "Ayushman1")
 status_file = 'status.out'
 with open(status_file, 'r') as f:
     description = f.read()
-
+print description, len(description)
 if len(description) != 0:
     state = 'failure'
     description = 'test failed'

@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "rules/rule1.py", line 1, in <module>
-    assert (1 == 2), 'this is a test that passed'
-AssertionError: this is a test that passed
