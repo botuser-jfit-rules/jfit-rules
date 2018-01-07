@@ -7,6 +7,7 @@ test_folder = 'rules'
 
 rules = os.listdir(test_folder)
 
+open(outfile, 'w').close()
 with open(outfile, 'a') as f:
     for rule in rules:
         testfile_path = os.path.join(test_folder, rule)
