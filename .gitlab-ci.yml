@@ -20,6 +20,6 @@ status:
         - demo-runner
     when: always
     cache:
-        path:
+        paths:
             - status.out
         policy: pull
