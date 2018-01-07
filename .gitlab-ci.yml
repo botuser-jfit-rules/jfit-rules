@@ -2,14 +2,15 @@ stages:
   - test
   - post_status
 
+cache:
+    untracked: true
+
 unittest:
     stage: test
     script:
         - python test.py
     tags:
         - demo-runner
-    cache:
-        untracked: true
 
 status:
     stage: post_status
