@@ -4,7 +4,6 @@ import sys
 
 outfile = 'status.out'
 test_folder = 'rules'
-test_flag = True
 
 rules = os.listdir(test_folder)
 
@@ -16,8 +15,3 @@ with open(outfile, 'a') as f:
         # print p.returncode, output, error
         if p.returncode != 0:
             f.write(rule + ' failed\n')
-            test_flag = False
-
-# print test_flag
-if test_flag == False:
-    sys.exit('Some test failed. Check status.out')
