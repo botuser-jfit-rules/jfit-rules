@@ -9,8 +9,7 @@ unittest:
     tags:
         - demo-runner
     cache:
-        paths:
-            - status.out
+        untracked: true
 
 status:
     stage: post_status
@@ -20,6 +19,4 @@ status:
         - demo-runner
     when: always
     cache:
-        paths:
-            - status.out
         policy: pull
