@@ -9,7 +9,7 @@ cache:
 unittest:
     stage: test
     script:
-        - bash test.sh &> status.out
+        - python test.py
     tags:
         - demo-runner
 

@@ -11,10 +11,10 @@ with open(status_file, 'r') as f:
 print description, len(description)
 if len(description) != 0:
     state = 'failure'
-    description = 'test failed'
+    description = 'Some test[s] failed. Check details'
 else:
     state = 'success'
-    description = 'test passed'
+    description = 'All test passed'
 
 repo = g.get_repo('ayushgithub/jfit-rules')
 commit = repo.get_commit(sha)
