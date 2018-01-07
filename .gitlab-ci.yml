@@ -2,15 +2,16 @@ stages:
   - test
   - post_status
 
+cache:
+    paths:
+        - status.out
+
 unittest:
     stage: test
     script:
         - bash test.sh &> status.out
     tags:
         - demo-runner
-    cache:
-        paths:
-            - status.out
 
 status:
     stage: post_status
