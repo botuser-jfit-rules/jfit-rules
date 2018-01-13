@@ -4,12 +4,12 @@ import sys
 import github
 
 g = github.Github("ayushgithub", "Ayushman1")
-sha = os.environ.get('sha1')
+sha = os.environ.get('ghprbActualCommit')
 print sha, type(sha)
 pullid = os.environ.get('ghprbPullId')
 print pullid, type(pullid)
 repo = g.get_repo('ayushgithub/jfit-rules')
-# pull_request = repo.get_pull(pullid)
+pull_request = repo.get_pull(int(pullid))
 
 test_folder = 'rules'
 exit_code = 0
@@ -22,6 +22,7 @@ for rule in rules:
     # print p.returncode, output, error
     if p.returncode != 0:
         exit_code = p.returncode
+        print rule,'failed' 
         
 if exit_code != 0:
     sys.exit(exit_code)
