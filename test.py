@@ -5,11 +5,10 @@ import github
 
 g = github.Github("ayushgithub", "Ayushman1")
 sha = os.environ.get('ghprbActualCommit')
-print sha, type(sha)
 pullid = os.environ.get('ghprbPullId')
-print pullid, type(pullid)
 repo = g.get_repo('ayushgithub/jfit-rules')
 pull_request = repo.get_pull(int(pullid))
+commit = repo.get_commit(sha)
 
 test_folder = 'rules'
 exit_code = 0
@@ -22,7 +21,8 @@ for rule in rules:
     # print p.returncode, output, error
     if p.returncode != 0:
         exit_code = p.returncode
-        print rule,'failed' 
-        
+        print rule,'failed'
+        pull_request.create_review_comment(body=error, commit_id=commit, path=os.path.join(test_folder,rule), position=1)
+
 if exit_code != 0:
     sys.exit(exit_code)
