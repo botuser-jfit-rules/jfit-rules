@@ -5,9 +5,11 @@ import github
 
 g = github.Github("ayushgithub", "Ayushman1")
 sha = os.environ.get('sha1')
+print sha, type(sha)
 pullid = os.environ.get('ghprbPullId')
+print pullid, type(pullid)
 repo = g.get_repo('ayushgithub/jfit-rules')
-pull_request = repo.get_pull(pullid)
+# pull_request = repo.get_pull(pullid)
 
 test_folder = 'rules'
 exit_code = 0
