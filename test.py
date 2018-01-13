@@ -9,7 +9,6 @@ pullid = os.environ.get('ghprbPullId')
 repo = g.get_repo('ayushgithub/jfit-rules')
 pull_request = repo.get_pull(pullid)
 
-
 test_folder = 'rules'
 exit_code = 0
 rules = os.listdir(test_folder)
@@ -22,6 +21,5 @@ for rule in rules:
     if p.returncode != 0:
         exit_code = p.returncode
         
-
 if exit_code != 0:
     sys.exit(exit_code)
