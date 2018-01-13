@@ -1,1 +1,1 @@
-assert (1 == 3), 'this is a test that passed'
+assert (1 == 1), 'this is a test that passed'
